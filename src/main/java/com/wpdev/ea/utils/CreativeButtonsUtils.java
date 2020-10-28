@@ -10,6 +10,12 @@ public class CreativeButtonsUtils {
 		public static final String style_1_button_1 = "EXPLORE THE GLOBE";
 		public static final String style_1_button_2_front  = "EXPLORE MORE";
 		public static final String style_1_button_2_back  = "Go!";
+		
+		public static final String style_2_header = "Insert Icons That Relate To Your Content";
+		public static final String style_2_button_1 = "EXPLORE THE GLOBE";
+		public static final String style_2_button_2_front  = "EXPLORE";
+		public static final String style_2_button_2_back  = "Go!";
+		
 	}
 	
 	public static class Locator {
@@ -22,5 +28,12 @@ public class CreativeButtonsUtils {
 		public static final String style_1_button_1 = "//*[@id=\"post-21\"]/div/div/div/div/section[2]/div/div/div/div/div/section[2]/div/div/div[2]/div/div/div/div/div/a/div/span";
 		public static final String style_1_button_2_front  = "//*[@id=\"post-21\"]/div/div/div/div/section[2]/div/div/div/div/div/section[6]/div/div/div[2]/div/div/div/div/div/a/div/span";
 		public static final String style_1_button_2_back  = "//*[@id=\"post-21\"]/div/div/div/div/section[2]/div/div/div/div/div/section[6]/div/div/div[2]/div/div/div/div/div/a";
+		
+		public static final String style_2_header = "//*[@id=\"post-21\"]/div/div/div/div/section[4]/div/div/div/div/div/section[1]/div/div/div[2]/div/div/div[1]/div/h3";
+		public static final String style_2_button_1 = "//*[@id=\"post-21\"]/div/div/div/div/section[4]/div/div/div/div/div/section[2]/div/div/div[1]/div/div/div/div/div/a/div/span";
+		public static final String style_2_button_2_front  = "//*[@id=\"post-21\"]/div/div/div/div/section[4]/div/div/div/div/div/section[6]/div/div/div[1]/div/div/div/div/div/a/div";
+		public static final String style_2_button_2_back  = "//*[@id=\"post-21\"]/div/div/div/div/section[4]/div/div/div/div/div/section[6]/div/div/div[1]/div/div/div/div/div/a";
+		public static final String style_2_button_1_icon  = "//*[@id=\"post-21\"]/div/div/div/div/section[4]/div/div/div/div/div/section[2]/div/div/div[1]/div/div/div/div/div/a/div/i";
+	
 	}
 }

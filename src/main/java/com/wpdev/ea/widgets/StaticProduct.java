@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -22,6 +23,7 @@ public class StaticProduct {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/static-product/");
+		System.out.println("Now Testing Static Product");
 
 		assertEquals(Driver.getTitle(), StaticProductUtils.Text.page_title);
 		Driver.manage().window().maximize();
@@ -40,42 +42,46 @@ public class StaticProduct {
 		Driver.findElement(By.className("nx-close")).click();
 		
 		//STYLE 1
+		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
+		style_1.executeScript("window.scrollTo(0,1038)", "");
+		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_header)).getText(),StaticProductUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_desc)).getText(),StaticProductUtils.Text.style_1_desc);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_1_title)).getText(),StaticProductUtils.Text.style_1_data_1_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_1_price)).getText(),StaticProductUtils.Text.style_1_data_1_price);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_1_button)).click();
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_2_title)).getText(),StaticProductUtils.Text.style_1_data_2_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_2_price)).getText(),StaticProductUtils.Text.style_1_data_2_price);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_2_button)).click();
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_3_title)).getText(),StaticProductUtils.Text.style_1_data_3_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_3_price)).getText(),StaticProductUtils.Text.style_1_data_3_price);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_3_button)).click();
+		System.out.println("Style 1 working");
 		
-		
+
 		//STYLE 2
+		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
+		style_2.executeScript("window.scrollTo(0,1880)", "");
+		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_header)).getText(),StaticProductUtils.Text.style_2_header);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_desc)).getText(),StaticProductUtils.Text.style_2_desc);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_1_title)).getText(),StaticProductUtils.Text.style_2_data_1_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_1_price)).getText(),StaticProductUtils.Text.style_2_data_1_price);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_1_button)).click();
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_2_title)).getText(),StaticProductUtils.Text.style_2_data_2_title);
-		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_2_price)).getText(),StaticProductUtils.Text.style_2_data_2_price);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_2_button)).click();
+		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_2_price)).getText(),StaticProductUtils.Text.style_2_data_2_price);	
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_3_title)).getText(),StaticProductUtils.Text.style_2_data_3_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_3_price)).getText(),StaticProductUtils.Text.style_2_data_3_price);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_3_button)).click();
-		
+		System.out.println("Style 2 working");
 		//STYLE 3
+		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
+		style_3.executeScript("window.scrollTo(0,2660)", "");
+		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_header)).getText(),StaticProductUtils.Text.style_3_header);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_desc)).getText(),StaticProductUtils.Text.style_3_desc);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_data_1_title)).getText(),StaticProductUtils.Text.style_3_data_1_title);
-		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_data_1_desc)).getText(),StaticProductUtils.Text.style_3_data_1_desc);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_1_button)).click();
-		
+		//assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_data_1_desc)).getText(),StaticProductUtils.Text.style_3_data_1_desc);	
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_data_2_title)).getText(),StaticProductUtils.Text.style_3_data_2_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_3_data_2_desc)).getText(),StaticProductUtils.Text.style_3_data_2_desc);
-		//Driver.findElement(By.xpath(StaticProductUtils.Locator.style_2_data_2_button)).click();
+		System.out.println("Style 3 working");
+		System.out.println("STATIC PRODUCT ALL OK");
+		System.out.println("---------------------");
 		
 	}
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -21,6 +22,7 @@ public class DataTable {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/table/");
+		System.out.println("Now Testing Data Table Page ");
 		assertEquals(Driver.getTitle(), DataTableUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.widget_title)).getText(),
@@ -37,6 +39,10 @@ public class DataTable {
 		Driver.findElement(By.className("nx-close")).click();
 
 		// STYLE 1
+		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
+		style_1.executeScript("window.scrollBy(0,1123)", "");
+		Thread.sleep(2000);
+		
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_title)).getText(),
 				DataTableUtils.Text.Style_1_title);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_desc)).getText(),
@@ -56,7 +62,7 @@ public class DataTable {
 
 		if (style_1_icon_1.isDisplayed() && style_1_icon_2.isDisplayed() && style_1_icon_3.isDisplayed()
 				&& style_1_icon_4.isDisplayed()) {
-			System.out.println("Style 1 Icon Display Passed");
+			System.out.println("Style 1 Icons are visible");
 		}
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_data_1)).getText(),
 				DataTableUtils.Text.style_1_data_1);
@@ -65,8 +71,13 @@ public class DataTable {
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_data_3)).getText(),
 				DataTableUtils.Text.style_1_data_3);
 		Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_data_3)).click();
+		System.out.println("Style 1 working");
 
 		// STYLE 2
+		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
+		style_2.executeScript("window.scrollTo(0,2008)", "");
+		Thread.sleep(2000);
+		
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_2_title)).getText(),
 				DataTableUtils.Text.Style_2_title);
 
@@ -86,10 +97,14 @@ public class DataTable {
 
 		if (style_2_icon_1.isDisplayed() && style_2_icon_2.isDisplayed() && style_2_icon_3.isDisplayed()
 				&& style_2_icon_4.isDisplayed()) {
-			System.out.println("Style 2 Icon Display Passed");
+			System.out.println("Style 2 Icons are visible");
+			System.out.println("Style 2 all working");
 		}
 
 		// STYLE 3
+		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
+		style_3.executeScript("window.scrollTo(0,3025)", "");
+		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.Style_3_title)).getText(),
 				DataTableUtils.Text.Style_3_title);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_header_1)).getText(),
@@ -107,7 +122,7 @@ public class DataTable {
 
 		if (style_3_icon_1.isDisplayed() && style_3_icon_2.isDisplayed() && style_3_icon_3.isDisplayed()
 				&& style_3_icon_4.isDisplayed()) {
-			System.out.println("Style 3 Icon Display Passed");
+			System.out.println("Style 3 Icons are visible");
 		}
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_1)).getText(),
 				DataTableUtils.Text.style_3_data_1);
@@ -116,8 +131,12 @@ public class DataTable {
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_3)).getText(),
 				DataTableUtils.Text.style_3_data_3);
 		Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_3)).click();
+		System.out.println("Style 3 all working");
 
 		// STYLE 4
+		JavascriptExecutor style_4 = (JavascriptExecutor) Driver;
+		style_4.executeScript("window.scrollTo(0,3934)", "");
+		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_4_title)).getText(),
 				DataTableUtils.Text.Style_4_title);
 
@@ -137,7 +156,7 @@ public class DataTable {
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_4_data_2)).getText(),
 				DataTableUtils.Text.style_4_data_2);
 		Driver.findElement(By.xpath(DataTableUtils.Locator.style_4_data_2)).click();
-		System.out.println("No Icons Availble On Style 4");
+		System.out.println("Style 4 all working (No icons here)");
 
 		/*
 		 * // SORTING //String sorting =
@@ -149,6 +168,9 @@ public class DataTable {
 		 * style_4_data_2)).getText(), // DataTableUtils.Text.style_4_data_1);
 		 */
 		// STYLE 5
+		JavascriptExecutor style_5 = (JavascriptExecutor) Driver;
+		style_5.executeScript("window.scrollTo(0,4935)", "");
+		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.Style_5_title)).getText(),
 				DataTableUtils.Text.Style_5_title);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_header_1)).getText(),
@@ -166,15 +188,18 @@ public class DataTable {
 
 		if (style_5_icon_1.isDisplayed() && style_5_icon_2.isDisplayed() && style_5_icon_3.isDisplayed()
 				&& style_5_icon_4.isDisplayed()) {
-			System.out.println("Style 5 Icon Display Passed");
+			System.out.println("Style 5 Icons are visible");
+			System.out.println("Style 5 all working");
+			
 		}
-		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_1)).getText(),
-				DataTableUtils.Text.style_3_data_1);
-		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_2)).getText(),
-				DataTableUtils.Text.style_3_data_2);
-		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_3)).getText(),
-				DataTableUtils.Text.style_3_data_3);
+		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_data_1)).getText(),
+				DataTableUtils.Text.style_5_data_1);
+		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_data_2)).getText(),
+				DataTableUtils.Text.style_5_data_2);
 		Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_data_2)).click();
+		
+		System.out.println("DATA TABLE ALL OK");
+		System.out.println("-----------------");
 
 	}
 }

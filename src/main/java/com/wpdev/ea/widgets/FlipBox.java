@@ -20,6 +20,7 @@ public class FlipBox {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/flip-box/");
+		System.out.println("Now Testing Flip Box Page");
 
 		assertEquals(Driver.getTitle(), FlipBoxUtils.Text.page_title);
 		Driver.manage().window().maximize();
@@ -36,8 +37,10 @@ public class FlipBox {
 		Driver.switchTo().window(tabs2.get(0));
 		Driver.findElement(By.className("nx-close")).click();
 
+		//STYLE 1
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollBy(0,932)");
+		Thread.sleep(2000);
 
 		assertEquals(Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_header)).getText(),
 				FlipBoxUtils.Text.style_1_header);
@@ -48,7 +51,6 @@ public class FlipBox {
 		Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_box_1_icon)).isDisplayed();
 
 		Actions mousehover = new Actions(Driver);
-
 		WebElement style_1_box_1 = Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_box_1));
 		mousehover.moveToElement(style_1_box_1).build().perform();
 		assertEquals(Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_box_1_back)).getText(),
@@ -57,9 +59,11 @@ public class FlipBox {
 		mousehover.moveToElement(style_1_box_2).build().perform();
 		assertEquals(Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_box_2_back)).getText(),
 				FlipBoxUtils.Text.style_1_box_2_back);
-		
+		System.out.println("Style 1 working");
+		//STYLE 2
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
-		style_2.executeScript("window.scrollBy(0,1680)");
+		style_2.executeScript("window.scrollTo(0,2711)");
+		Thread.sleep(2000);
 		
 		assertEquals(Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_header)).getText(),
 				FlipBoxUtils.Text.style_1_header);
@@ -69,8 +73,6 @@ public class FlipBox {
 				FlipBoxUtils.Text.style_1_box_2_front);
 		Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_1_box_1_icon)).isDisplayed();
 
-	
-
 		WebElement style_2_box_1 = Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_2_box_1));
 		mousehover.moveToElement(style_2_box_1).build().perform();
 		assertEquals(Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_2_box_1_back)).getText(),
@@ -79,6 +81,9 @@ public class FlipBox {
 		mousehover.moveToElement(style_2_box_2).build().perform();
 		assertEquals(Driver.findElement(By.xpath(FlipBoxUtils.Locator.style_2_box_2_back)).getText(),
 				FlipBoxUtils.Text.style_2_box_2_back);
+		System.out.println("Style 2 working");
+		System.out.println("FLIP BOX ALL OK");
+		System.out.println("---------------");
 
 	}
 
