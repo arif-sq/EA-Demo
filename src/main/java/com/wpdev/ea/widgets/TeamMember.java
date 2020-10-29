@@ -37,10 +37,12 @@ public class TeamMember {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		assertEquals(Driver.getTitle(), TeamMemberUtils.Text.doc_page_title);
+		System.out.println("Documentation Page Working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		//Driver.findElement(By.className("nx-close")).click();
 		
+		//STYLE 1
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,910)", "");
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_1_header)).getText(), TeamMemberUtils.Text.style_1_header);
@@ -59,6 +61,7 @@ public class TeamMember {
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_1_data_3_si)).isDisplayed();
 		System.out.println("Style 1 working with all icon & image");
 		
+		//STYLE 2
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
 		style_2.executeScript("window.scrollTo(0,1750)", "");
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_header)).getText(), TeamMemberUtils.Text.style_2_header);
@@ -81,6 +84,7 @@ public class TeamMember {
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_4_si)).isDisplayed();
 		System.out.println("Style 2 working with all icon & image");
 		
+		//STYLE 3
 		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
 		style_3.executeScript("window.scrollTo(0,3300)", "");
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_3_header)).getText(), TeamMemberUtils.Text.style_3_header);

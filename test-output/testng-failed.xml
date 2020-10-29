@@ -3,11 +3,26 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="com.wpdev.ea.widgets.TeamMemberCarousel">
+        <methods>
+          <include name="TeamMemberCarousel"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.TeamMemberCarousel -->
+      <class name="com.wpdev.ea.widgets.FlipBox">
+        <methods>
+          <include name="FlipBox"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.FlipBox -->
       <class name="com.wpdev.ea.widgets.TeamMember">
         <methods>
           <include name="TeamMember"/>
         </methods>
       </class> <!-- com.wpdev.ea.widgets.TeamMember -->
+      <class name="com.wpdev.ea.widgets.StaticProduct">
+        <methods>
+          <include name="StaticProduct"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.StaticProduct -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -34,6 +34,7 @@ public class DataTable {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		assertEquals(Driver.getTitle(), DataTableUtils.Text.doc_page_title);
+		System.out.println("Documentation Page Working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		Driver.findElement(By.className("nx-close")).click();
@@ -70,7 +71,7 @@ public class DataTable {
 				DataTableUtils.Text.style_1_data_2);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_data_3)).getText(),
 				DataTableUtils.Text.style_1_data_3);
-		Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_data_3)).click();
+		//Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_data_3)).click();
 		System.out.println("Style 1 working");
 
 		// STYLE 2
@@ -130,7 +131,7 @@ public class DataTable {
 				DataTableUtils.Text.style_3_data_2);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_3)).getText(),
 				DataTableUtils.Text.style_3_data_3);
-		Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_3)).click();
+		//Driver.findElement(By.xpath(DataTableUtils.Locator.style_3_data_3)).click();
 		System.out.println("Style 3 all working");
 
 		// STYLE 4
@@ -155,7 +156,7 @@ public class DataTable {
 				DataTableUtils.Text.style_4_data_1);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_4_data_2)).getText(),
 				DataTableUtils.Text.style_4_data_2);
-		Driver.findElement(By.xpath(DataTableUtils.Locator.style_4_data_2)).click();
+		//Driver.findElement(By.xpath(DataTableUtils.Locator.style_4_data_2)).click();
 		System.out.println("Style 4 all working (No icons here)");
 
 		/*
@@ -196,7 +197,7 @@ public class DataTable {
 				DataTableUtils.Text.style_5_data_1);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_data_2)).getText(),
 				DataTableUtils.Text.style_5_data_2);
-		Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_data_2)).click();
+		//Driver.findElement(By.xpath(DataTableUtils.Locator.style_5_data_2)).click();
 		
 		System.out.println("DATA TABLE ALL OK");
 		System.out.println("-----------------");

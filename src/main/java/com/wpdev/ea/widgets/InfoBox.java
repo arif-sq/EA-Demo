@@ -36,6 +36,7 @@ public class InfoBox {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		assertEquals(Driver.getTitle(), InfoBoxUtils.Text.doc_page_title);
+		System.out.println("Documentation Page Working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		Driver.findElement(By.className("nx-close")).click();

@@ -34,6 +34,7 @@ public class DualColorHeading {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		assertEquals(Driver.getTitle(), DualColorHeadingUtils.Text.doc_page_title);
+		System.out.println("Documentation page working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		Driver.findElement(By.className("nx-close")).click();
