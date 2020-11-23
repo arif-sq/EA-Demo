@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32530" started-at="2020-11-11T11:40:14 BDT" finished-at="2020-11-11T11:40:46 BDT">
+  <suite name="Default suite" duration-ms="52466" started-at="2020-11-23T14:49:23 BDT" finished-at="2020-11-23T14:50:16 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32530" started-at="2020-11-11T11:40:14 BDT" finished-at="2020-11-11T11:40:46 BDT">
-      <class name="com.wpdev.ea.widgets.AdvancedMenu">
-        <test-method status="PASS" signature="AdvancedMenu()[pri:0, instance:com.wpdev.ea.widgets.AdvancedMenu@31206beb]" name="AdvancedMenu" duration-ms="32444" started-at="2020-11-11T11:40:14 BDT" finished-at="2020-11-11T11:40:46 BDT">
+    <test name="Default test" duration-ms="52466" started-at="2020-11-23T14:49:23 BDT" finished-at="2020-11-23T14:50:16 BDT">
+      <class name="com.wpdev.ea.widgets.ContentTimeline">
+        <test-method status="PASS" signature="DataTable()[pri:0, instance:com.wpdev.ea.widgets.ContentTimeline@31206beb]" name="DataTable" duration-ms="52403" started-at="2020-11-23T14:49:23 BDT" finished-at="2020-11-23T14:50:16 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AdvancedMenu -->
-      </class> <!-- com.wpdev.ea.widgets.AdvancedMenu -->
+        </test-method> <!-- DataTable -->
+      </class> <!-- com.wpdev.ea.widgets.ContentTimeline -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

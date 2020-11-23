@@ -2,20 +2,19 @@ package com.wpdev.ea.widgets;
 
 import static org.testng.Assert.assertEquals;
 
+
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
-
 import com.wpdev.ea.utils.AdvanvedMenuUtils;
-import com.wpdev.ea.utils.CreativeButtonsUtils;
 import com.wpdev.ea.utils.DriverManager;
-import com.wpdev.ea.utils.DualColorHeadingUtils;
 import com.wpdev.ea.utils.config;
 
 public class AdvancedMenu {
@@ -66,5 +65,8 @@ public class AdvancedMenu {
 		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(AdvanvedMenuUtils.Locator.style_2_submenu)).getText(), AdvanvedMenuUtils.Text.style_2_submenu);
 		
+		//Driver.manage().window().setPosition(new Point (375,812));
+		
+	
 	}
 }

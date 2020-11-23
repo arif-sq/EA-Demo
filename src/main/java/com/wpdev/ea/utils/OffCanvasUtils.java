@@ -6,6 +6,7 @@ public class OffCanvasUtils {
 		public static final String widget_title = "Offcanvas";
 		public static final String widget_desc = "Instantly display stunning sidebar menu using EA Offcanvas. Configure button position, direction, add different transitions to content & style it to make it standout for your site visitors";
 		public static final String doc_page_title = "Essential Addons For Elementor | Offcanvas Content Elements";
+		
 		public static final String style_1_header = "Configure Offcanvas Settings & Style";
 		public static final String style_1_desc = "Choose your preferred ‘Content Type’, add button text, set content direction to right or left, select from ‘Content Transition’ to ‘Slide’, include mouse hover effects, and style it in advance to make it interactive";
 		public static final String style_1_left_data ="Home";
