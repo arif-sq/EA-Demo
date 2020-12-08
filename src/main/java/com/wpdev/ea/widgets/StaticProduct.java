@@ -45,6 +45,7 @@ public class StaticProduct {
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1038)", "");
 		Thread.sleep(2000);
+		
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_header)).getText(),StaticProductUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_desc)).getText(),StaticProductUtils.Text.style_1_desc);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.style_1_data_1_title)).getText(),StaticProductUtils.Text.style_1_data_1_title);

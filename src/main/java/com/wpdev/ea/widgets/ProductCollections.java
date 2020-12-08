@@ -1,0 +1,60 @@
+package com.wpdev.ea.widgets;
+
+import static org.testng.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import com.wpdev.ea.utils.DriverManager;
+import com.wpdev.ea.utils.ProductCollectionsUtils;
+import com.wpdev.ea.utils.ProductGridUtils;
+import com.wpdev.ea.utils.config;
+
+public class ProductCollections {
+	@Test
+	public static void ProductCollections() throws InterruptedException {
+		WebDriver Driver = DriverManager.Driver;
+		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().deleteAllCookies();
+		Driver.get(config.base_url + "/woocommerce-product-collections/");
+		System.out.println("Now Testing Woo Product Collections Page");
+
+		assertEquals(Driver.getTitle(), ProductCollectionsUtils.Text.page_title);
+		Driver.manage().window().maximize();
+		assertEquals(Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.widget_title)).getText(),
+				ProductCollectionsUtils.Text.widget_title);
+		assertEquals(Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.widget_desc)).getText(),
+				ProductCollectionsUtils.Text.widget_desc);
+		Thread.sleep(2000);
+		Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.doc_link)).click();
+		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
+		Driver.switchTo().window(tabs2.get(1));
+		//assertEquals(Driver.getTitle(), ProductGridUtils.Text.doc_page_title);
+		System.out.println("Documentation Page working");
+		Driver.close();
+		Driver.switchTo().window(tabs2.get(0));
+		Driver.findElement(By.className("nx-close")).click();
+		
+		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
+		Style_1.executeScript("window.scrollTo(0,1000)");
+		String style_1_data_1 = Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_1_header)).getText();
+		//Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.nxclose)).click();
+		Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_1_header)).click();
+		Thread.sleep(2000);
+		assertEquals(Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_1_page)).getText(), style_1_data_1 );
+		Driver.navigate().back();
+
+		String style_1_data_2 = Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_2_header)).getText();
+		//Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.nxclose)).click();
+		Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_2_header)).click();
+		Thread.sleep(2000);
+		assertEquals(Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_2_page)).getText(), style_1_data_2 );
+		Driver.navigate().back();
+		
+	}
+}
