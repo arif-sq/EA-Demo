@@ -3,11 +3,61 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+      <class name="com.wpdev.ea.widgets.PostGrid">
+        <methods>
+          <include name="PostGrid"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.PostGrid -->
+      <class name="com.wpdev.ea.widgets.InteractiveCards">
+        <methods>
+          <include name="InteractiveCard"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.InteractiveCards -->
+      <class name="com.wpdev.ea.widgets.ToolTip">
+        <methods>
+          <include name="ToolTip"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.ToolTip -->
+      <class name="com.wpdev.ea.widgets.PostBlock">
+        <methods>
+          <include name="PostBlock"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.PostBlock -->
       <class name="com.wpdev.ea.widgets.WooCheckout">
         <methods>
           <include name="WooCheckout"/>
         </methods>
       </class> <!-- com.wpdev.ea.widgets.WooCheckout -->
+      <class name="com.wpdev.ea.widgets.AdvancedAccordion">
+        <methods>
+          <include name="AdvancedAccordion"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.AdvancedAccordion -->
+      <class name="com.wpdev.ea.widgets.PostTimeline">
+        <methods>
+          <include name="PostTimeline"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.PostTimeline -->
+      <class name="com.wpdev.ea.widgets.SmartPostList">
+        <methods>
+          <include name="SmartPostList"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.SmartPostList -->
+      <class name="com.wpdev.ea.widgets.DynamicGallery">
+        <methods>
+          <include name="DynamicGallery"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.DynamicGallery -->
+      <class name="com.wpdev.ea.widgets.FlipBox">
+        <methods>
+          <include name="FlipBox"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.FlipBox -->
+      <class name="com.wpdev.ea.widgets.OffCanvas">
+        <methods>
+          <include name="OffCanvas"/>
+        </methods>
+      </class> <!-- com.wpdev.ea.widgets.OffCanvas -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

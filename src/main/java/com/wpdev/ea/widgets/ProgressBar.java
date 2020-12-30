@@ -23,7 +23,7 @@ public class ProgressBar {
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/progress-bar/");
 		
-		System.out.println("Now Testing Progress Bar Page");
+		System.out.println("TESTING PROGRESS BAR");
 
 
 		assertEquals(Driver.getTitle(), ProgressBarUtils.Text.page_title);
@@ -37,10 +37,10 @@ public class ProgressBar {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		//assertEquals(Driver.getTitle(), ProgressBarUtils.Text.doc_page_title);
-		System.out.println("Documentation Page Working");
+		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,900)", "");
@@ -65,5 +65,8 @@ public class ProgressBar {
 		assertEquals(Driver.findElement(By.xpath(ProgressBarUtils.Locator.style_3_desc)).getText(), ProgressBarUtils.Text.style_3_desc);
 		assertEquals(Driver.findElement(By.xpath(ProgressBarUtils.Locator.style_3_data_1)).getText(), ProgressBarUtils.Text.style_3_data_1);
 		assertEquals(Driver.findElement(By.xpath(ProgressBarUtils.Locator.style_3_data_2)).getText(), ProgressBarUtils.Text.style_3_data_2);
+	
+		System.out.println("PROGRESS BAR ALL OK");
+		System.out.println("----------------------");
 	}
 }

@@ -23,7 +23,7 @@ public class CallToAction {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/call-to-action/");
-		System.out.println("Now Testing Call To Action Page ");
+		System.out.println("TESTING CALL TO ACTION");
 		assertEquals(Driver.getTitle(), CallToActionUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(CallToActionUtils.Locator.widget_title)).getText(),
@@ -35,10 +35,10 @@ public class CallToAction {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		//assertEquals(Driver.getTitle(), CallToActionUtils.Text.doc_page_title);
-		System.out.println("Documentation Page Working");
+		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,1000)");
@@ -53,5 +53,7 @@ public class CallToAction {
 		
 		assertEquals(Driver.findElement(By.xpath(CallToActionUtils.Locator.style_2_data_1)).getText(), CallToActionUtils.Text.style_2_data_1);
 		assertEquals(Driver.findElement(By.xpath(CallToActionUtils.Locator.style_2_btn)).getText(), CallToActionUtils.Text.style_2_btn);
+		System.out.println("CALL TO ACTION ALL OK");
+		System.out.println("-------------------------");
 	}
 }

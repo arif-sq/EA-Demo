@@ -37,7 +37,7 @@ public class SmartPostList {
 		System.out.println("Documentation Page Working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,900)", "");

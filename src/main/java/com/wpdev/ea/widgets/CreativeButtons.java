@@ -42,7 +42,7 @@ public class CreativeButtons {
 		System.out.println("Documentation Page Working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 
 		// STYLE 1
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;

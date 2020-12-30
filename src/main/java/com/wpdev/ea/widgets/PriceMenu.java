@@ -22,7 +22,7 @@ public class PriceMenu {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/price-menu/");
-		System.out.println("Now Testing Price Menu Page ");
+		System.out.println("TESTING PRICE MENU");
 		assertEquals(Driver.getTitle(), PriceMenuUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(PriceMenuUtils.Locator.widget_title)).getText(),
@@ -34,10 +34,10 @@ public class PriceMenu {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		//assertEquals(Driver.getTitle(), PriceMenuUtils.Text.doc_page_title);
-		System.out.println("Documentation Page Working");
+		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,1000)");
@@ -58,6 +58,9 @@ public class PriceMenu {
 		assertEquals(Driver.findElement(By.xpath(PriceMenuUtils.Locator.style_2_data_2)).getText(), PriceMenuUtils.Text.style_2_data_2);
 		Driver.findElement(By.xpath(PriceMenuUtils.Locator.style_2_data_1_icon)).isDisplayed();
 		Driver.findElement(By.xpath(PriceMenuUtils.Locator.style_2_data_2_icon)).isDisplayed();
+		
+		System.out.println("PRICE MENU ALL OK");
+		System.out.println("----------------------");
 		
 	}
 }

@@ -22,7 +22,7 @@ public class ProductGrid {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/woo-product-grid/");
-		System.out.println("Now Testing Woo Product Grid Page");
+		System.out.println("TESTING PRODUCT GRID");
 
 		assertEquals(Driver.getTitle(), ProductGridUtils.Text.page_title);
 		Driver.manage().window().maximize();
@@ -35,13 +35,14 @@ public class ProductGrid {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		//assertEquals(Driver.getTitle(), ProductGridUtils.Text.doc_page_title);
-		System.out.println("Documentation Page working");
+		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,950)");
+		Thread.sleep(2000);
 
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_1_header)).getText(), ProductGridUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_1_data_1_title)).getText(), ProductGridUtils.Text.style_1_data_1_title);
@@ -54,6 +55,7 @@ public class ProductGrid {
 
 		JavascriptExecutor Style_2 = (JavascriptExecutor) Driver;
 		Style_2.executeScript("window.scrollTo(0,1600)");
+		Thread.sleep(2000);
 
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_2_data_1_title)).getText(), ProductGridUtils.Text.style_2_data_1_title);
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_2_data_1_price)).getText(), ProductGridUtils.Text.style_2_data_1_price);
@@ -61,6 +63,9 @@ public class ProductGrid {
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_2_data_2_title)).getText(), ProductGridUtils.Text.style_2_data_2_title);
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_2_data_2_price)).getText(), ProductGridUtils.Text.style_2_data_2_price);
 		Driver.findElement(By.xpath(ProductGridUtils.Locator.style_2_data_2_image)).isDisplayed();
+		
+		System.out.println("PRODUCT GRID ALL OK");
+		System.out.println("----------------------");
 	
 	}
 }

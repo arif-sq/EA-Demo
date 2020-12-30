@@ -22,7 +22,7 @@ public class OnePageNav {
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/one-page-nav/");
 		
-		System.out.println("Now Testing One Page Navigation Page");
+		System.out.println("TESTING ONE PAGE NAV");
 
 
 		assertEquals(Driver.getTitle(), OnePageNavUtils.Text.page_title);
@@ -36,10 +36,10 @@ public class OnePageNav {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		//assertEquals(Driver.getTitle(), OnePageNavUtils.Text.doc_page_title);
-		System.out.println("Documentation Page Working");
+		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		Driver.findElement(By.xpath(OnePageNavUtils.Locator.home)).click();
 		assertEquals(Driver.findElement(By.xpath(OnePageNavUtils.Locator.style_1)).getText(), OnePageNavUtils.Text.style_1);
@@ -63,6 +63,9 @@ public class OnePageNav {
 		assertEquals(Driver.findElement(By.xpath(OnePageNavUtils.Locator.style_5)).getText(), OnePageNavUtils.Text.style_5);
 		Thread.sleep(3000);
 
+		System.out.println("ONE PAGE NAV ALL OK");
+		System.out.println("----------------------");
+	
 
 	}
 }

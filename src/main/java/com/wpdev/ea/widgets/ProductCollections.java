@@ -22,7 +22,7 @@ public class ProductCollections {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/woocommerce-product-collections/");
-		System.out.println("Now Testing Woo Product Collections Page");
+		System.out.println("TESTING PRODUCT COLLECTION");
 
 		assertEquals(Driver.getTitle(), ProductCollectionsUtils.Text.page_title);
 		Driver.manage().window().maximize();
@@ -38,10 +38,11 @@ public class ProductCollections {
 		System.out.println("Documentation Page working");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,1000)");
+		Thread.sleep(2000);
 		String style_1_data_1 = Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_1_header)).getText();
 		//Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.nxclose)).click();
 		Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_1_header)).click();
@@ -55,6 +56,9 @@ public class ProductCollections {
 		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.style_1_data_2_page)).getText(), style_1_data_2 );
 		Driver.navigate().back();
+		System.out.println("PRODUCT COLLECTION ALL OK");
+		System.out.println("-------------------------");
+		Thread.sleep(3000);
 		
 	}
 }

@@ -14,7 +14,7 @@ public class PricingTableUtils {
 		public static final String style_1_data_3 = "$89 / Mo";
 		
 		public static final String style_2_header = "Pricing Table Style 03";
-		public static final String style_2_desc = "Use call to action button on every pricing style, enable the button toggle and more to make it standout\r\n";
+		public static final String style_2_desc = "Use call to action button on every pricing style, enable the button toggle and more to make it standout";
 		public static final String style_2_data_1 = "$00 / Month";
 		public static final String style_2_data_2 = "$49 / Month";
 		public static final String style_2_data_3 = "$99 / Month";

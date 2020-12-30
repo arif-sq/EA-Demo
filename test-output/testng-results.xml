@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="34046" started-at="2020-12-08T15:25:17 BDT" finished-at="2020-12-08T15:25:51 BDT">
+  <suite name="Default suite" duration-ms="37950" started-at="2020-12-30T17:12:27 BDT" finished-at="2020-12-30T17:13:05 BDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="34046" started-at="2020-12-08T15:25:17 BDT" finished-at="2020-12-08T15:25:51 BDT">
-      <class name="com.wpdev.ea.widgets.WooCheckout">
-        <test-method status="PASS" signature="WooCheckout()[pri:0, instance:com.wpdev.ea.widgets.WooCheckout@31206beb]" name="WooCheckout" duration-ms="33957" started-at="2020-12-08T15:25:17 BDT" finished-at="2020-12-08T15:25:51 BDT">
+    <test name="Default test" duration-ms="37950" started-at="2020-12-30T17:12:27 BDT" finished-at="2020-12-30T17:13:05 BDT">
+      <class name="com.wpdev.ea.widgets.AdvancedDataTable">
+        <test-method status="PASS" signature="AdvancedDataTable()[pri:0, instance:com.wpdev.ea.widgets.AdvancedDataTable@1e3ff233]" name="AdvancedDataTable" duration-ms="37780" started-at="2020-12-30T17:12:27 BDT" finished-at="2020-12-30T17:13:05 BDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- WooCheckout -->
-      </class> <!-- com.wpdev.ea.widgets.WooCheckout -->
+        </test-method> <!-- AdvancedDataTable -->
+      </class> <!-- com.wpdev.ea.widgets.AdvancedDataTable -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

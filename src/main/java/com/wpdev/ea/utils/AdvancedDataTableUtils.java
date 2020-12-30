@@ -15,7 +15,7 @@ public class AdvancedDataTableUtils {
 		
 		public static final String style_2_header = "Data Table Style 02"; 
 		public static final String style_2_desc = "Sort your Data in Real-time along side Pagination & Live Search"; 
-		public static final String style_2_data = "3 Day Absent"; 
+		public static final String style_2_data = "Attend"; 
 	}
 	public static class Locator {
 		public static final String widget_title = "//*[@id=\"post-256377\"]/div/div/div/div/section[1]/div[4]/div/div[2]/div/div/section/div/div/div[2]/div/div/div[1]/div/h2";

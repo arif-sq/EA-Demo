@@ -26,7 +26,7 @@ public class InteractivePromo {
 		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/interactive-promo/");
-		System.out.println("Now Testing Interactive Promo Page ");
+		System.out.println("TESTING INTERACTIVE PROMO");
 		assertEquals(Driver.getTitle(), InteractivePromoUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.widget_title)).getText(),
@@ -38,10 +38,10 @@ public class InteractivePromo {
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
 		//assertEquals(Driver.getTitle(), PriceMenuUtils.Text.doc_page_title);
-		System.out.println("Documentation Page Working");
+		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.className("nx-close")).click();
+		//Driver.findElement(By.className("nx-close")).click();
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,1000)");
@@ -65,5 +65,7 @@ public class InteractivePromo {
 		Thread.sleep(1500);
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_2_data_1_desc)).getText(), InteractivePromoUtils.Text.style_2_data_1_desc);
 		
+		System.out.println("INTERACTIVE PROMO ALL OK");
+		System.out.println("----------------------");
 	}
 }
