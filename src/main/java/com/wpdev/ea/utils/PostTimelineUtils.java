@@ -22,6 +22,6 @@ public class PostTimelineUtils {
 		public static final String style_1_desc = "//*[@id=\"post-27\"]/div/div/div/div/section[2]/div/div/div/div/div/div[2]/div/div";
 		public static final String style_1_data_1 = "//*[@id=\"eael-post-timeline-3f78c0af\"]/div/article[1]/div[2]/a/div[3]/h2";
 		public static final String style_1_data_2 = "//*[@id=\"eael-post-timeline-3f78c0af\"]/div/article[8]/div[2]/a/div[3]/h2";
-		public static final String style_1_lmore = "//*[@id=\"eael-load-more-btn-3f78c0af\"]/div";
+		public static final String lmore = "//*[@id=\"eael-load-more-btn-3f78c0af\"]/span";
 	}
 }

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -39,11 +40,19 @@ public class PostBlock {
 		Driver.switchTo().window(tabs2.get(0));
 		//Driver.findElement(By.className("nx-close")).click();
 		
-		assertEquals(Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_header)).getText(), PostBlockUtils.Text.style_1_header);
-		assertEquals(Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_1_header)).getText(), PostBlockUtils.Text.style_1_data_1_header);
-		assertEquals(Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_1_desc)).getText(), PostBlockUtils.Text.style_1_data_1_desc);
-		assertEquals(Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_2_header)).getText(), PostBlockUtils.Text.style_1_data_2_header);
-		assertEquals(Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_2_desc)).getText(), PostBlockUtils.Text.style_1_data_2_desc);
+		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
+		style_1.executeScript("window.scrollTo(0,1150)", "");
+		String style_1_data_1_text = Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_1)).getText();	
+		Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_1)).click();
+		String style_1_data_1_page = Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_1_page)).getText();
+		assertEquals(style_1_data_1_text, style_1_data_1_page);
+		Driver.navigate().back();
+		
+		String style_1_data_2_text = Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_2)).getText();	
+		Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_2)).click();
+		String style_1_data_2_page = Driver.findElement(By.xpath(PostBlockUtils.Locator.style_1_data_2_page)).getText();
+		assertEquals(style_1_data_2_text, style_1_data_2_page);
+		Driver.navigate().back();
 		
 		System.out.println("POST BLOCK ALL OK");
 		System.out.println("----------------------");

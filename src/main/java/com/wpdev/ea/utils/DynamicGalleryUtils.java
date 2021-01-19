@@ -9,7 +9,6 @@ public class DynamicGalleryUtils {
 		
 		public static final String style_1_header = "Attractive Grid Layout To Showcase All Of Your Posts";
 		public static final String style_1_desc = "Choose the Grid Layout option to showcase your blog content amazingly in an attractive grid style. Add filter controls for easier navigation & hover animation to make your posts stand out";
-		public static final String style_1_data_1 = "How To Create Your Own Cosmetic & Beauty Website Without Any Coding [FREE]";
 	
 	}
 	public static class Locator {
@@ -20,8 +19,17 @@ public class DynamicGalleryUtils {
 		
 		public static final String style_1_header = "//*[@id=\"post-260882\"]/div/div/div/div/section[2]/div/div/div/div/div/section[1]/div/div/div[2]/div/div/div[1]/div/h3";
 		public static final String style_1_desc = "//*[@id=\"post-260882\"]/div/div/div/div/section[2]/div/div/div/div/div/section[1]/div/div/div[2]/div/div/div[2]/div/div";
-		public static final String style_1_sorting = "//*[@id=\"eael-filter-gallery-wrapper-3990f5c\"]/div[1]/ul/li[2]";
-		public static final String style_1_data_1 = "//*[@id=\"eael-filter-gallery-wrapper-3990f5c\"]/div[2]/div[2]/div/div[2]/h2/a";
+		
+		public static final String style_1_sorting = "//*[@id=\"eael-filter-gallery-wrapper-3990f5c\"]/div[1]/ul/li[4]";
+		public static final String style_1_data_1 = "//*[@id=\"eael-filter-gallery-wrapper-3990f5c\"]/div[2]/div[3]/div/div[2]/h2/a";
+		public static final String style_1_data_1_page = "//*[@id=\"page\"]/div[1]/div/section/div/div/div[1]/div/div/section[1]/div/div/div/div/div/div[1]/div/h1";
+		
+		public static final String style_1_data_2 = "//*[@id=\"eael-filter-gallery-wrapper-3990f5c\"]/div[2]/div[5]/div/div[2]/h2/a";
+		public static final String style_1_data_2_page = "//*[@id=\"page\"]/div[1]/div/section/div/div/div[1]/div/div/section[1]/div/div/div/div/div/div[1]/div/h1";
+		
+		public static final String style_1_data_3 = "//*[@id=\"eael-filter-gallery-wrapper-3990f5c\"]/div[2]/div[7]/div/div[2]/h2/a";
+		public static final String style_1_data_3_page = "//*[@id=\"page\"]/div[1]/div/section/div/div/div[1]/div/div/section[1]/div/div/div/div/div/div[1]/div/h1";
+		
 		public static final String style_1_lmore = "//*[@id=\"eael-load-more-btn-3990f5c\"]/span";
 	}
 }

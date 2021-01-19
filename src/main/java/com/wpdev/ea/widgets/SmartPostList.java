@@ -41,21 +41,6 @@ public class SmartPostList {
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,900)", "");
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_1_header)).getText(), SmartPostListUtils.Text.style_1_header);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_1_desc)).getText(), SmartPostListUtils.Text.style_1_desc);
-		Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_1_sorting)).click();
-		Thread.sleep(2000);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_1_data_1)).getText(), SmartPostListUtils.Text.style_1_data_1);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_1_data_1_date)).getText(), SmartPostListUtils.Text.style_1_data_1_date);
-		
-		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
-		style_2.executeScript("window.scrollTo(0,2280)", "");
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_2_header)).getText(),SmartPostListUtils.Text.style_2_header);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_2_desc)).getText(), SmartPostListUtils.Text.style_2_desc);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_2_data_1)).getText(), SmartPostListUtils.Text.style_2_data_1);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_2_data_1_date)).getText(), SmartPostListUtils.Text.style_2_data_1_date);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_2_data_2)).getText(), SmartPostListUtils.Text.style_2_data_2);
-		assertEquals(Driver.findElement(By.xpath(SmartPostListUtils.Locator.style_2_data_2_date)).getText(), SmartPostListUtils.Text.style_2_data_2_date);
 		
 	}
 

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -41,11 +42,14 @@ public class PostTimeline {
 		
 		assertEquals(Driver.findElement(By.xpath(PostTimelineUtils.Locator.style_1_header)).getText(), PostTimelineUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(PostTimelineUtils.Locator.style_1_desc)).getText(), PostTimelineUtils.Text.style_1_desc);
-		assertEquals(Driver.findElement(By.xpath(PostTimelineUtils.Locator.style_1_data_1)).getText(), PostTimelineUtils.Text.style_1_data_1);
-		Driver.findElement(By.xpath(PostTimelineUtils.Locator.style_1_lmore)).click();
-		Thread.sleep(2000);
-		assertEquals(Driver.findElement(By.xpath(PostTimelineUtils.Locator.style_1_data_2)).getText(), PostTimelineUtils.Text.style_1_data_2);
-	
+		
+		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
+		style_1.executeScript("window.scrollTo(0,1950)", "");
+		Driver.findElement(By.xpath(PostTimelineUtils.Locator.lmore)).click();
+
+		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
+		style_1.executeScript("window.scrollTo(0,5000)", "");
+		Driver.findElement(By.xpath(PostTimelineUtils.Locator.lmore)).click();
 		System.out.println("POST TIMELINE ALL OK");
 		System.out.println("----------------------");
 	}

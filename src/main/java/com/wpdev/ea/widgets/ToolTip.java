@@ -62,7 +62,7 @@ public class ToolTip {
 		
 	
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
-		style_2.executeScript("window.scrollTo(0,2900)", "");
+		style_2.executeScript("window.scrollTo(0,2700)", "");
 		WebElement style_2_data_1 = Driver.findElement(By.xpath(ToolTipUtils.Locator.style_2_data_2_icon));
 		mousehover.moveToElement(style_2_data_1).build().perform();
 		assertEquals(Driver.findElement(By.xpath(ToolTipUtils.Locator.style_2_data_1)).getText(), ToolTipUtils.Text.style_2_data_1);

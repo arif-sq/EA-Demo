@@ -44,6 +44,7 @@ public class AdvancedMenu {
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1350)", "");
+		Thread.sleep(2000);
 		
 		assertEquals(Driver.findElement(By.xpath(AdvanvedMenuUtils.Locator.style_1_header)).getText(), AdvanvedMenuUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(AdvanvedMenuUtils.Locator.style_1_desc)).getText(), AdvanvedMenuUtils.Text.style_1_desc);
@@ -56,6 +57,7 @@ public class AdvancedMenu {
 		
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
 		style_2.executeScript("window.scrollTo(0,1900)", "");
+		Thread.sleep(2000);
 		
 		assertEquals(Driver.findElement(By.xpath(AdvanvedMenuUtils.Locator.style_2_header)).getText(), AdvanvedMenuUtils.Text.style_2_header);
 		assertEquals(Driver.findElement(By.xpath(AdvanvedMenuUtils.Locator.style_2_desc)).getText(), AdvanvedMenuUtils.Text.style_2_desc);

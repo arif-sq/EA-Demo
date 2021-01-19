@@ -45,6 +45,7 @@ public class InteractivePromo {
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,1000)");
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_1_header)).getText(), InteractivePromoUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_1_desc)).getText(), InteractivePromoUtils.Text.style_1_desc);
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_1_data_1)).getText(), InteractivePromoUtils.Text.style_1_data_1);

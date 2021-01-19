@@ -81,14 +81,15 @@ public class TeamMember {
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_2_si)).isDisplayed();
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_3_si)).isDisplayed();
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_4_si)).isDisplayed();
-		
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		//STYLE 3
 		Thread.sleep(2000);
 		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
-		style_3.executeScript("window.scrollTo(0,4000)", "");
+		style_3.executeScript("window.scrollTo(0,3600)", "");
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_3_header)).getText(), TeamMemberUtils.Text.style_3_header);
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_3_desc)).getText(), TeamMemberUtils.Text.style_3_desc);
 		Actions mousehover = new Actions(Driver);
+		
 		
 		WebElement style_3_data_1 = Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_3_box_1));
 		mousehover.moveToElement(style_3_data_1).build().perform();
