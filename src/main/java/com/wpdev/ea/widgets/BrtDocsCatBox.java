@@ -38,26 +38,23 @@ public class BrtDocsCatBox {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		//Driver.findElement(By.className("nx-close")).click();
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		{
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
-		style_1.executeScript("window.scrollTo(0,1150)", "");
+		style_1.executeScript("window.scrollTo(0,1000)", "");
 		String style_1_data_1 = Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_1)).getText();
 		System.out.println(style_1_data_1);
 		Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_1)).click();
 		assertEquals(style_1_data_1, Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_1_page)).getText());
 		Driver.navigate().back();
+		Thread.sleep(2000);
 		
 		String style_1_data_2 = Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_2)).getText();
 		Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_2)).click();
 		assertEquals(style_1_data_2, Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_2_page)).getText());
 		Driver.navigate().back();
-		
-		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
-		style_2.executeScript("window.scrollTo(0,1830)", "");
-		String style_2_data_1 = Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_2_data_1)).getText();
-		Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_2_data_1)).click();
-		assertEquals(style_2_data_1, Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_1_page)).getText());
-		Driver.navigate().back();
-
 	}
 }

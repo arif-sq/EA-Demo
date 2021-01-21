@@ -39,6 +39,12 @@ public class Counter {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		// Driver.findElement(By.className("nx-close")).click();
+		
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		{
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
+		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,928)");
 		Thread.sleep(2000);
@@ -52,17 +58,9 @@ public class Counter {
 		 Driver.findElement(By.xpath(CounterUtils.Locator.style_2_icon)).isDisplayed();
 		 
 		 JavascriptExecutor Style_3 = (JavascriptExecutor) Driver;
-		 Style_3.executeScript("window.scrollTo(0,1700)"); Thread.sleep(2000);
+		 Style_3.executeScript("window.scrollTo(0,1900)"); Thread.sleep(2000);
 		 assertEquals(Driver.findElement(By.xpath(CounterUtils.Locator.style_3_data_1)).getText(), CounterUtils.Text.style_3_data_1);
 		  Driver.findElement(By.xpath(CounterUtils.Locator.style_3_icon)).isDisplayed();
-		  
-		 // JavascriptExecutor Style_4 = (JavascriptExecutor) Driver;
-		 // Style_4.executeScript("window.scrollTo(0,2022)"); Thread.sleep(2000);
-		 assertEquals(Driver.findElement(By.xpath(CounterUtils.Locator.style_4_data_1)).getText(), CounterUtils.Text.style_4_data_1);
-		 
-		// JavascriptExecutor Style_5 = (JavascriptExecutor) Driver;
-		// Style_5.executeScript("window.scrollTo(0,2480)"); Thread.sleep(2000);
-		 assertEquals(Driver.findElement(By.xpath(CounterUtils.Locator.style_5_data_1)).getText(), CounterUtils.Text.style_5_data_1);
-		 Driver.findElement(By.xpath(CounterUtils.Locator.style_5_icon)).isDisplayed();
+	
 		 }
 }

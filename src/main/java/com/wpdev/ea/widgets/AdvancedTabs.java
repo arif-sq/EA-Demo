@@ -38,11 +38,14 @@ public class AdvancedTabs {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		//Driver.findElement(By.className("nx-close")).click();
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		{
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
-		style_1.executeScript("window.scrollTo(0,880)", "");
+		style_1.executeScript("window.scrollTo(0,1110)", "");
 		Thread.sleep(2000);
 		
 		assertEquals(Driver.findElement(By.xpath(AdvancedTabsUtils.Locator.style_1_header)).getText(), AdvancedTabsUtils.Text.style_1_header);
@@ -57,7 +60,7 @@ public class AdvancedTabs {
 		Driver.findElement(By.xpath(AdvancedTabsUtils.Locator.style_1_data_2_icon)).isDisplayed();
 		//STYLE 2
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
-		style_2.executeScript("window.scrollTo(0,3800)", "");
+		style_2.executeScript("window.scrollTo(0,2563)", "");
 		Thread.sleep(2000);
 		
 		assertEquals(Driver.findElement(By.xpath(AdvancedTabsUtils.Locator.style_2_header)).getText(), AdvancedTabsUtils.Text.style_2_header);

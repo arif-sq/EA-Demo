@@ -21,10 +21,7 @@ public class OnePageNav {
 		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/one-page-nav/");
-		
 		System.out.println("TESTING ONE PAGE NAV");
-
-
 		assertEquals(Driver.getTitle(), OnePageNavUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(OnePageNavUtils.Locator.widget_title)).getText(),
@@ -40,6 +37,10 @@ public class OnePageNav {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		//Driver.findElement(By.className("nx-close")).click();
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		{
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
 		
 		Driver.findElement(By.xpath(OnePageNavUtils.Locator.home)).click();
 		assertEquals(Driver.findElement(By.xpath(OnePageNavUtils.Locator.style_1)).getText(), OnePageNavUtils.Text.style_1);
@@ -49,7 +50,8 @@ public class OnePageNav {
 		assertEquals(Driver.findElement(By.xpath(OnePageNavUtils.Locator.style_2)).getText(), OnePageNavUtils.Text.style_2);
 		Thread.sleep(3000);
 		
-		Driver.findElement(By.xpath(OnePageNavUtils.Locator.nx_close)).click();
+		if(Driver.findElement(By.xpath(OnePageNavUtils.Locator.nx_close)).isDisplayed())
+		{Driver.findElement(By.xpath(OnePageNavUtils.Locator.nx_close)).click();}
 		
 		Driver.findElement(By.xpath(OnePageNavUtils.Locator.services)).click();
 		assertEquals(Driver.findElement(By.xpath(OnePageNavUtils.Locator.style_3)).getText(), OnePageNavUtils.Text.style_3);

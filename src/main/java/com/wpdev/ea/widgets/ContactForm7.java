@@ -38,6 +38,10 @@ public class ContactForm7 {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		//Driver.findElement(By.className("nx-close")).click();
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		{
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1225)", "");
@@ -47,6 +51,8 @@ public class ContactForm7 {
 		Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_1_message)).sendKeys(ContactForm7Utils.Text.style_1_message);
 		JavascriptExecutor style_1_extended = (JavascriptExecutor) Driver;
 		style_1_extended.executeScript("window.scrollTo(0,1620)", "");
+		if (Driver.findElement(By.xpath(config.nx_close)).isDisplayed())
+		{Driver.findElement(By.xpath(config.nx_close)).click();}
 		Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_1_submit)).click();
 		Thread.sleep(2000);
 		//assertEquals(Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_2_success_message)).getText(), ContactForm7Utils.Text.style_2_success_message);
@@ -64,6 +70,8 @@ public class ContactForm7 {
 		Thread.sleep(1000);
 		JavascriptExecutor style_2_extended = (JavascriptExecutor) Driver;
 		style_2_extended.executeScript("window.scrollTo(0,3000)", "");
+		if (Driver.findElement(By.xpath(config.nx_close)).isDisplayed())
+		{Driver.findElement(By.xpath(config.nx_close)).click();}
 		Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_2_submit)).click();
 		
 		

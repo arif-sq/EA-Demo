@@ -37,6 +37,10 @@ public class FlipBox {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		//Driver.findElement(By.className("nx-close")).click();
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		{
+		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
 
 		//STYLE 1
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
