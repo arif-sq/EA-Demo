@@ -23,7 +23,7 @@ public class InteractivePromo {
 	@Test
 	public static void InteractivePromo() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/interactive-promo/");
 		System.out.println("TESTING INTERACTIVE PROMO");

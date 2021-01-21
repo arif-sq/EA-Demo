@@ -21,7 +21,7 @@ public class WooCheckout {
 	@Test
 	public static void WooCheckout() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/woo-checkout/");
 		System.out.println("Now Testing Woo Checkout Page");

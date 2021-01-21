@@ -21,7 +21,7 @@ public class PostGrid {
 	@Test
 	public static void PostGrid() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/post-grid/");
 		System.out.println("TESTING POST GRID");

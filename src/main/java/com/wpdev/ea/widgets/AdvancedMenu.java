@@ -21,7 +21,7 @@ public class AdvancedMenu {
 	@Test
 	public static void AdvancedMenu() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/advanced-menu/");
 		System.out.println("TESTING ADVANCED MENU");

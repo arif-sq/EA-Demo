@@ -20,7 +20,7 @@ public class TeamMemberCarousel {
 	@Test
 	public static void TeamMemberCarousel() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/team-members-carousel/");
 		System.out.println("Now Testing Team Member Page");

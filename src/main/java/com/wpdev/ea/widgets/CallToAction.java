@@ -18,9 +18,9 @@ import com.wpdev.ea.utils.config;
 
 public class CallToAction {
 	@Test
-	public static void PricingTable() throws InterruptedException {
+	public static void CallToAction() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/call-to-action/");
 		System.out.println("TESTING CALL TO ACTION");

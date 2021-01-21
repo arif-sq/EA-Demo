@@ -20,7 +20,7 @@ public class StaticProduct {
 	@Test
 	public static void StaticProduct() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/static-product/");
 		System.out.println("TESTING STATIC PRODUCT");

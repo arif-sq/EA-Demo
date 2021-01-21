@@ -23,7 +23,7 @@ public class FilterableGallery {
 	public static void FilterableGallery() throws InterruptedException {
 		
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		
 		Driver.get(config.base_url + "/filterable-gallery/");
@@ -71,22 +71,28 @@ public class FilterableGallery {
 		Thread.sleep(1000);
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_2_header_5)).click();
 		
+		
 		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
-		style_3.executeScript("window.scrollTo(0,3600)", "");
+		style_3.executeScript("window.scrollTo(0,2500)", "");
 		assertEquals(Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_data_1)).getText(), FilterableGalleryUtils.Text.style_3_data_1);
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_data_1_icon)).isDisplayed();
+		Thread.sleep(1000);
 		
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_header_2)).click();	
+		Thread.sleep(1000);
 		assertEquals(Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_data_2)).getText(), FilterableGalleryUtils.Text.style_3_data_2);
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_data_2_icon)).isDisplayed();
 		
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_header_3)).click();	
+		Thread.sleep(1000);
 		assertEquals(Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_data_3)).getText(), FilterableGalleryUtils.Text.style_3_data_3);
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_data_3_icon)).isDisplayed();
 		
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_header_4)).click();	
+		Thread.sleep(1000);
 		
-		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_header_5)).click();	
+		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_3_header_5)).click();
+		Thread.sleep(1000);
 		
 		
 		

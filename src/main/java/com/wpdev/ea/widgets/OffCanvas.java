@@ -19,7 +19,7 @@ public class OffCanvas {
 	@Test
 	public static void OffCanvas() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/offcanvas-content/");
 		System.out.println("TESTING OFF CANVAS");

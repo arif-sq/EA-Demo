@@ -19,7 +19,7 @@ public class DataTable {
 	@Test
 	public static void DataTable() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/table/");
 		System.out.println("TESTING DATA TABLE");

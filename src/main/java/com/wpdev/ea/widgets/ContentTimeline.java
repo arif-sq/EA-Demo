@@ -19,7 +19,7 @@ public class ContentTimeline {
 	@Test
 	public static void ContentTimeline() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/content-timeline/");
 		System.out.println("TESTING CONTENT TIMELINE");

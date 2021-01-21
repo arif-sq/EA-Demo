@@ -19,7 +19,7 @@ public class PostTimeline {
 	@Test
 	public static void PostTimeline() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/post-timeline/");
 		System.out.println("TESTING POST TIMELINE");

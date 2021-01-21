@@ -19,7 +19,7 @@ public class AdvancedTabs {
 	@Test
 	public static void AdvancedTabs() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/advanced-tabs/");
 		System.out.println("TESTING ADVANCED TABS");

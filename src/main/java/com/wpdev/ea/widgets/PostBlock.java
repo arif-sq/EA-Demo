@@ -19,7 +19,7 @@ public class PostBlock {
 	@Test
 	public static void PostBlock() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/post-block/");
 		System.out.println("TESTING POST BLOCK");

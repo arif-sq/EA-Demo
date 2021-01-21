@@ -19,7 +19,7 @@ public class InteractiveCards {
 	@Test
 	public static void InteractiveCard() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/interactive-cards/");
 		System.out.println("TESTING INTERACTIVE CARDS");

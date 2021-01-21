@@ -19,7 +19,7 @@ public class SmartPostList {
 	@Test
 	public static void SmartPostList() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/post-list/");
 		System.out.println("Now Testing Smart Post List Page ");
