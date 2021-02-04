@@ -35,6 +35,7 @@ public class Login {
 		assertEquals(Driver.findElement(By.xpath(LoginUtils.Locator.widget_desc)).getText(),
 				LoginUtils.Text.widget_desc);
 		Thread.sleep(2000);
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(LoginUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -42,6 +43,7 @@ public class Login {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
+		}
 		//Driver.findElement(By.className("nx-close")).click();
 		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
 		{

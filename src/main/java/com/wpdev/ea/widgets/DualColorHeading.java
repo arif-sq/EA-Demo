@@ -18,18 +18,18 @@ public class DualColorHeading {
 	@Test
 	public static void DualColorHeading() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/dual-color-headline/");
 		System.out.println("TESTING DUAL COLOR HEADING");
-
-		assertEquals(Driver.getTitle(), DualColorHeadingUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.widget_title)).getText(),
 				DualColorHeadingUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.widget_desc)).getText(),
 				DualColorHeadingUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -37,12 +37,12 @@ public class DualColorHeading {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
 		
+		if (Driver.findElement(By.xpath(config.crisp_close))
+				.isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollBy(0,973)", "");
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.style_1_header_1)).getText(), DualColorHeadingUtils.Text.style_1_header_1 );
@@ -61,6 +61,9 @@ public class DualColorHeading {
 		
 		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
 		style_3.executeScript("window.scrollTo(0,2634)", "");
+		if (Driver.findElement(By.xpath(config.crisp_close))
+				.isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.style_3_header_1)).getText(), DualColorHeadingUtils.Text.style_3_header_1 );
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.style_3_header_2)).getText(), DualColorHeadingUtils.Text.style_3_header_2 );
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.style_3_desc)).getText(), DualColorHeadingUtils.Text.style_3_desc );
@@ -70,5 +73,5 @@ public class DualColorHeading {
 		
 		
 		}
-
+	}
 }

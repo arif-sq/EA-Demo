@@ -21,19 +21,19 @@ public class EventCalender {
 	public static void EventCalender() throws InterruptedException {
 		
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		
 		Driver.get(config.base_url + "/event-calendar/");
 		System.out.println("TESTING EVENT CALENDER");
 
-		assertEquals(Driver.getTitle(), EventCalenderUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(EventCalenderUtils.Locator.widget_title)).getText(),
 				EventCalenderUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(EventCalenderUtils.Locator.widget_desc)).getText(),
 				EventCalenderUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(EventCalenderUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -41,10 +41,11 @@ public class EventCalender {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
+		
+		if (Driver.findElement(By.xpath(config.crisp_close))
+				.isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
@@ -69,5 +70,8 @@ public class EventCalender {
 		Thread.sleep(1000);
 		assertEquals(Driver.findElement(By.xpath(EventCalenderUtils.Locator.style_2_time)).getText(),EventCalenderUtils.Text.style_2_time);
 		Driver.findElement(By.xpath(EventCalenderUtils.Locator.style_2_month)).click();
+		
+		System.out.println("DUAL COLOR EVENT CALENDER OK");
+		System.out.println("-------------------------");
 	}
 }

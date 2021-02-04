@@ -19,12 +19,10 @@ public class AdvancedDataTable {
 	@Test
 	public static void AdvancedDataTable() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/advanced-data-table/");
 		System.out.println("TESTING ADVANCED DATA TABLE");
-
-		assertEquals(Driver.getTitle(), AdvancedDataTableUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.widget_title)).getText(),
 				AdvancedDataTableUtils.Text.widget_title);
@@ -42,13 +40,12 @@ public class AdvancedDataTable {
 			Driver.switchTo().window(tabs2.get(0));
 		}
 
-		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
-			Driver.findElement(By.xpath(config.crisp_close)).click();
-		}
-
 		JavascriptExecutor common = (JavascriptExecutor) Driver;
 		common.executeScript("window.scrollTo(0,850)", "");
 		Thread.sleep(1500);
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.common_header)).getText(),
 				AdvancedDataTableUtils.Text.common_header);
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.common_desc)).getText(),
@@ -59,6 +56,9 @@ public class AdvancedDataTable {
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1500)", "");
 		Thread.sleep(1500);
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.style_1_header)).getText(),
 				AdvancedDataTableUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.style_1_desc)).getText(),
@@ -73,6 +73,9 @@ public class AdvancedDataTable {
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
 		style_2.executeScript("window.scrollTo(0,2300)", "");
 		Thread.sleep(1500);
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.style_2_header)).getText(),
 				AdvancedDataTableUtils.Text.style_2_header);
 		assertEquals(Driver.findElement(By.xpath(AdvancedDataTableUtils.Locator.style_2_desc)).getText(),

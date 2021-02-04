@@ -15,21 +15,23 @@ import com.wpdev.ea.utils.BtrDocsCatGridUtils;
 import com.wpdev.ea.utils.DriverManager;
 import com.wpdev.ea.utils.config;
 
-public class BrtDocsCatBox {
+public class BtrDocsCatBox {
 	@Test
-	public static void BrtDocsCatBox() throws InterruptedException {
+	public static void BtrDocsCatBox() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/betterdocs-category-box/");
 		System.out.println("TESTING BETTERDOCS CATEGORY BOX");
-		assertEquals(Driver.getTitle(), BtrDocsCatBoxUtils.Text.page_title);
+	
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.widget_title)).getText(),
 				BtrDocsCatBoxUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.widget_desc)).getText(),
 				BtrDocsCatBoxUtils.Text.widget_desc);
 		Thread.sleep(2000);
+		
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -37,14 +39,10 @@ public class BrtDocsCatBox {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
-		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
-		style_1.executeScript("window.scrollTo(0,1000)", "");
+		style_1.executeScript("window.scrollTo(0,1130)", "");
+
 		String style_1_data_1 = Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_1)).getText();
 		System.out.println(style_1_data_1);
 		Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_1)).click();
@@ -56,5 +54,8 @@ public class BrtDocsCatBox {
 		Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_2)).click();
 		assertEquals(style_1_data_2, Driver.findElement(By.xpath(BtrDocsCatBoxUtils.Locator.style_1_data_2_page)).getText());
 		Driver.navigate().back();
+		
+		System.out.println("BTRDOCS CAT BOX ALL OK");
+		System.out.println("-------------------------");
 	}
 }

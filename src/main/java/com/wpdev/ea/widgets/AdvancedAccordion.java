@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.wpdev.ea.utils.DriverManager;
 import com.wpdev.ea.utils.DualColorHeadingUtils;
+import com.wpdev.ea.utils.FeatureListUtils;
 import com.wpdev.ea.utils.AdvancedAccordionUtils;
 import com.wpdev.ea.utils.config;
 
@@ -20,19 +21,17 @@ public class AdvancedAccordion {
 	public static void AdvancedAccordion() throws InterruptedException {
 
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
-
 		Driver.get(config.base_url + "/advanced-accordion/");
 		System.out.println("TESTING ADVANCED ACCORDION");
-
-		assertEquals(Driver.getTitle(), AdvancedAccordionUtils.Text.page_title);
 		Driver.manage().window().maximize();
+
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.widget_title)).getText(),
 				AdvancedAccordionUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.widget_desc)).getText(),
 				AdvancedAccordionUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 
 		if (config.doc_check == "YES") {
 			Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.doc_link)).click();
@@ -43,13 +42,12 @@ public class AdvancedAccordion {
 			Driver.close();
 			Driver.switchTo().window(tabs2.get(0));
 		}
+		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
+		style_1.executeScript("window.scrollTo(0,998)", "");
 
 		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
 			Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
-
-		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
-		style_1.executeScript("window.scrollTo(0,998)", "");
 
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_1_header)).getText(),
 				AdvancedAccordionUtils.Text.style_1_header);
@@ -83,6 +81,10 @@ public class AdvancedAccordion {
 
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
 		style_2.executeScript("window.scrollTo(0,1683)", "");
+
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_2_header)).getText(),
 				AdvancedAccordionUtils.Text.style_2_header);
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_2_desc)).getText(),
@@ -101,7 +103,9 @@ public class AdvancedAccordion {
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_2_data_2_desc)).getText(),
 				AdvancedAccordionUtils.Text.style_2_data_2_desc);
 
-		Driver.findElement(By.xpath(config.crisp_close)).click();
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_2_data_3_image)).isDisplayed();
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_1_data_3_title)).getText(),
 				AdvancedAccordionUtils.Text.style_1_data_3_title);

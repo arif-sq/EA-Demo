@@ -23,17 +23,18 @@ public class InteractivePromo {
 	@Test
 	public static void InteractivePromo() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/interactive-promo/");
 		System.out.println("TESTING INTERACTIVE PROMO");
-		assertEquals(Driver.getTitle(), InteractivePromoUtils.Text.page_title);
+	
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.widget_title)).getText(),
 				InteractivePromoUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.widget_desc)).getText(),
 				InteractivePromoUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(InteractivePromoUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -41,15 +42,14 @@ public class InteractivePromo {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
 		
+
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,1000)");
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+		Driver.findElement(By.xpath(config.crisp_close)).click();	
+		}
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_1_header)).getText(), InteractivePromoUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_1_desc)).getText(), InteractivePromoUtils.Text.style_1_desc);
 		assertEquals(Driver.findElement(By.xpath(InteractivePromoUtils.Locator.style_1_data_1)).getText(), InteractivePromoUtils.Text.style_1_data_1);

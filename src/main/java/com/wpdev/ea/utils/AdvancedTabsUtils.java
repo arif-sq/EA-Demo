@@ -30,7 +30,7 @@ public class AdvancedTabsUtils {
 		public static final String style_1_header = "//*[@id=\"post-2436\"]/div/div/div/div/section[2]/div/div/div/div/div/section/div/div/div[2]/div/div/div[1]/div/h3";
 		public static final String style_1_desc = "//*[@id=\"post-2436\"]/div/div/div/div/section[2]/div/div/div/div/div/section/div/div/div[2]/div/div/div[2]/div/div";
 		public static final String style_1_data_1_header = "//*[@id=\"eael-advance-tabs-73ca6f31\"]/div[1]/ul/li[1]/span";
-		public static final String style_1_data_1_desc = "//*[@id=\"eael-advance-tabs-73ca6f31\"]/div[2]";
+		public static final String style_1_data_1_desc = "//*[@id=\"eael-advance-tabs-73ca6f31\"]/div[2]/div[1]";
 		public static final String style_1_data_1_icon = "//*[@id=\"eael-advance-tabs-73ca6f31\"]/div[1]/ul/li[1]/img";
 		
 		public static final String style_1_data_2_header = "//*[@id=\"eael-advance-tabs-73ca6f31\"]/div[1]/ul/li[3]/span";

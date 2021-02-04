@@ -33,17 +33,19 @@ public class WooCheckout {
 		assertEquals(Driver.findElement(By.xpath(WooCheckoutUtils.Locator.widget_desc)).getText(),
 				WooCheckoutUtils.Text.widget_desc);
 		Thread.sleep(2000);
-		Driver.findElement(By.xpath(WooCheckoutUtils.Locator.doc_link)).click();
-		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
-		Driver.switchTo().window(tabs2.get(1));
-		//assertEquals(Driver.getTitle(), ProductGridUtils.Text.doc_page_title);
-		System.out.println("Documentation Page working");
-		Driver.close();
-		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		if (config.doc_check == "YES") {
+			Driver.findElement(By.xpath(WooCheckoutUtils.Locator.doc_link)).click();
+			ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
+			Driver.switchTo().window(tabs2.get(1));
+			// assertEquals(Driver.getTitle(), ProductGridUtils.Text.doc_page_title);
+			System.out.println("Documentation Page working");
+			Driver.close();
+			Driver.switchTo().window(tabs2.get(0));
+		}
+		// Driver.findElement(By.className("nx-close")).click();
+		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span"))
+				.isDisplayed()) {
+			Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
 
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;

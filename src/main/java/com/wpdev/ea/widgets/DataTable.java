@@ -19,17 +19,19 @@ public class DataTable {
 	@Test
 	public static void DataTable() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/table/");
 		System.out.println("TESTING DATA TABLE");
-		assertEquals(Driver.getTitle(), DataTableUtils.Text.page_title);
+
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.widget_title)).getText(),
 				DataTableUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.widget_desc)).getText(),
 				DataTableUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(DataTableUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -37,16 +39,19 @@ public class DataTable {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		}
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
 
 		// STYLE 1
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollBy(0,1123)", "");
 		Thread.sleep(2000);
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
+
 		
 		assertEquals(Driver.findElement(By.xpath(DataTableUtils.Locator.style_1_title)).getText(),
 				DataTableUtils.Text.Style_1_title);
@@ -107,6 +112,10 @@ public class DataTable {
 		}
 
 		// STYLE 3
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
+
 		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
 		style_3.executeScript("window.scrollTo(0,3025)", "");
 		Thread.sleep(2000);
@@ -139,6 +148,10 @@ public class DataTable {
 		System.out.println("Style 3 all working");
 
 		// STYLE 4
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
+
 		JavascriptExecutor style_4 = (JavascriptExecutor) Driver;
 		style_4.executeScript("window.scrollTo(0,3934)", "");
 		Thread.sleep(2000);

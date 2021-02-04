@@ -8,9 +8,9 @@ public class ContactForm7Utils {
 		public static final String doc_page_title = "CONTACT FORM 7";
 		
 		public static final String style_1_uname= "arif";
-		public static final String style_1_email= "arifur@ar.com.bd";
-		public static final String style_1_subject = "HELP";
-		public static final String style_1_message= "Help Me Please.";
+		public static final String style_1_email= "a@b.com";
+		public static final String style_1_subject = "TEST";
+		public static final String style_1_message= "TESTING DATA GENERATED";
 		public static final String style_1_success_message= "Thank you for your message. It has been sent.";
 	}
 	public static class Locator {

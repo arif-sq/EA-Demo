@@ -19,19 +19,18 @@ public class InfoBox {
 	@Test
 	public static void InfoBox() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/info-box/");
 		System.out.println("TESTING INFO BOX");
-		
-
-		assertEquals(Driver.getTitle(), InfoBoxUtils.Text.page_title);
+	
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(InfoBoxUtils.Locator.widget_title)).getText(),
 				InfoBoxUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(InfoBoxUtils.Locator.widget_desc)).getText(),
 				InfoBoxUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(InfoBoxUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
 		Driver.switchTo().window(tabs2.get(1));
@@ -39,15 +38,15 @@ public class InfoBox {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
+
 		
 		//STYLE 1
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,979)", "");
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(InfoBoxUtils.Locator.style_1_header)).getText(), InfoBoxUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(InfoBoxUtils.Locator.style_1_desc)).getText(), InfoBoxUtils.Text.style_1_desc);
