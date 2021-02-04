@@ -41,11 +41,6 @@ public class AdvancedMenu {
 			Driver.close();
 			Driver.switchTo().window(tabs2.get(0));
 		}
-	
-		if (Driver.findElement(By.xpath(config.crisp_close))
-				.isDisplayed()) {
-			Driver.findElement(By.xpath(config.crisp_close)).click();
-		}
 
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1350)", "");

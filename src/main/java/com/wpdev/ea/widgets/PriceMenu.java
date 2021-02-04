@@ -19,11 +19,11 @@ public class PriceMenu {
 	@Test
 	public static void PriceMenu() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/price-menu/");
 		System.out.println("TESTING PRICE MENU");
-		assertEquals(Driver.getTitle(), PriceMenuUtils.Text.page_title);
+	
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(PriceMenuUtils.Locator.widget_title)).getText(),
 				PriceMenuUtils.Text.widget_title);
@@ -39,10 +39,8 @@ public class PriceMenu {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		if(Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;

@@ -38,11 +38,7 @@ public class DualColorHeading {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		}
-		
-		if (Driver.findElement(By.xpath(config.crisp_close))
-				.isDisplayed()) {
-			Driver.findElement(By.xpath(config.crisp_close)).click();
-		}
+
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollBy(0,973)", "");
 		assertEquals(Driver.findElement(By.xpath(DualColorHeadingUtils.Locator.style_1_header_1)).getText(), DualColorHeadingUtils.Text.style_1_header_1 );

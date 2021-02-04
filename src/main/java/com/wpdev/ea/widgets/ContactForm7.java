@@ -23,13 +23,13 @@ public class ContactForm7 {
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/contact-form-7/");
 		System.out.println("TESTING CONTACT FORM 7");
-		assertEquals(Driver.getTitle(), ContactForm7Utils.Text.page_title);
+	
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(ContactForm7Utils.Locator.widget_title)).getText(),
 				ContactForm7Utils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(ContactForm7Utils.Locator.widget_desc)).getText(),
 				ContactForm7Utils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(ContactForm7Utils.Locator.doc_link)).click();
@@ -40,10 +40,9 @@ public class ContactForm7 {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed())
 		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
 		
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
@@ -56,9 +55,8 @@ public class ContactForm7 {
 		style_1_extended.executeScript("window.scrollTo(0,1620)", "");
 		if (Driver.findElement(By.xpath(config.nx_close)).isDisplayed())
 		{Driver.findElement(By.xpath(config.nx_close)).click();}
-		Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_1_submit)).click();
+		//Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_1_submit)).click();
 		Thread.sleep(2000);
-		//assertEquals(Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_2_success_message)).getText(), ContactForm7Utils.Text.style_2_success_message);
 		
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
 		style_2.executeScript("window.scrollTo(0,2587)", "");
@@ -75,8 +73,7 @@ public class ContactForm7 {
 		style_2_extended.executeScript("window.scrollTo(0,3000)", "");
 		if (Driver.findElement(By.xpath(config.nx_close)).isDisplayed())
 		{Driver.findElement(By.xpath(config.nx_close)).click();}
-		Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_2_submit)).click();
-		
+		//Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_2_submit)).click();	
 		
 	}
 }

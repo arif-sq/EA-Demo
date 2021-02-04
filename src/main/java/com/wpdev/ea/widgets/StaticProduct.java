@@ -20,18 +20,17 @@ public class StaticProduct {
 	@Test
 	public static void StaticProduct() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/static-product/");
 		System.out.println("TESTING STATIC PRODUCT");
 
-		assertEquals(Driver.getTitle(), StaticProductUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.widget_title)).getText(),
 				StaticProductUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(StaticProductUtils.Locator.widget_desc)).getText(),
 				StaticProductUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(StaticProductUtils.Locator.doc_link)).click();
 		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
@@ -40,11 +39,6 @@ public class StaticProduct {
 		System.out.println("DOC PAGE WORKING");
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
-		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
 		
 		//STYLE 1

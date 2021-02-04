@@ -21,18 +21,17 @@ public class TeamMember {
 	@Test
 	public static void TeamMember() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/team-members/");
 		System.out.println("TESTING TEAM MEMBER");
 
-		assertEquals(Driver.getTitle(), TeamMemberUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.widget_title)).getText(),
 				TeamMemberUtils.Text.widget_title);
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.widget_desc)).getText(),
 				TeamMemberUtils.Text.widget_desc);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		if (config.doc_check == "YES") {
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.doc_link)).click();
@@ -43,10 +42,10 @@ public class TeamMember {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed())
 		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
 		
 		//STYLE 1
@@ -88,11 +87,14 @@ public class TeamMember {
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_2_si)).isDisplayed();
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_3_si)).isDisplayed();
 		Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_2_data_4_si)).isDisplayed();
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed())
+		{
+		Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 		//STYLE 3
 		Thread.sleep(2000);
 		JavascriptExecutor style_3 = (JavascriptExecutor) Driver;
-		style_3.executeScript("window.scrollTo(0,3600)", "");
+		style_3.executeScript("window.scrollTo(0,3400)", "");
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_3_header)).getText(), TeamMemberUtils.Text.style_3_header);
 		assertEquals(Driver.findElement(By.xpath(TeamMemberUtils.Locator.style_3_desc)).getText(), TeamMemberUtils.Text.style_3_desc);
 		Actions mousehover = new Actions(Driver);

@@ -40,9 +40,6 @@ public class FeatureList {
 			Driver.switchTo().window(tabs2.get(0));
 		}
 
-		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
-			Driver.findElement(By.xpath(config.crisp_close)).click();
-		}
 		// STYLE 1
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
 		Style_1.executeScript("window.scrollTo(0,950)");

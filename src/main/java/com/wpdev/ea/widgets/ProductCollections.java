@@ -24,7 +24,6 @@ public class ProductCollections {
 		Driver.get(config.base_url + "/woocommerce-product-collections/");
 		System.out.println("TESTING PRODUCT COLLECTION");
 
-		assertEquals(Driver.getTitle(), ProductCollectionsUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(ProductCollectionsUtils.Locator.widget_title)).getText(),
 				ProductCollectionsUtils.Text.widget_title);
@@ -41,10 +40,10 @@ public class ProductCollections {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
+
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed())
 		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;

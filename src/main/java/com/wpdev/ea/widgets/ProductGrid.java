@@ -19,12 +19,11 @@ public class ProductGrid {
 	@Test
 	public static void ProductGrid() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/woo-product-grid/");
 		System.out.println("TESTING PRODUCT GRID");
 
-		assertEquals(Driver.getTitle(), ProductGridUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.widget_title)).getText(),
 				ProductGridUtils.Text.widget_title);
@@ -41,15 +40,14 @@ public class ProductGrid {
 		Driver.close();
 		Driver.switchTo().window(tabs2.get(0));
 		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
-		}
 		
 		JavascriptExecutor Style_1 = (JavascriptExecutor) Driver;
-		Style_1.executeScript("window.scrollTo(0,950)");
+		Style_1.executeScript("window.scrollTo(0,1050)");
 		Thread.sleep(2000);
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed())
+		{
+		Driver.findElement(By.xpath(config.crisp_close)).click();
+		}
 
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_1_header)).getText(), ProductGridUtils.Text.style_1_header);
 		assertEquals(Driver.findElement(By.xpath(ProductGridUtils.Locator.style_1_data_1_title)).getText(), ProductGridUtils.Text.style_1_data_1_title);

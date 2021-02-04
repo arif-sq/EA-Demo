@@ -19,11 +19,11 @@ public class NinjaForms {
 	@Test
 	public static void NinjaForms() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/ninja-forms/");
 		System.out.println("TESTING NINJA FORM");
-		assertEquals(Driver.getTitle(), NinjaFormsUtils.Text.page_title);
+
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(NinjaFormsUtils.Locator.widget_title)).getText(),
 				NinjaFormsUtils.Text.widget_title);
@@ -31,28 +31,27 @@ public class NinjaForms {
 				NinjaFormsUtils.Text.widget_desc);
 		Thread.sleep(2000);
 		if (config.doc_check == "YES") {
-		Driver.findElement(By.xpath(NinjaFormsUtils.Locator.doc_link)).click();
-		ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
-		Driver.switchTo().window(tabs2.get(1));
-		assertEquals(Driver.findElement(By.xpath(NinjaFormsUtils.Locator.doc_page_title)).getText(), NinjaFormsUtils.Text.doc_page_title);
-		System.out.println("DOC PAGE WORKING");
-		Driver.close();
-		Driver.switchTo().window(tabs2.get(0));
+			Driver.findElement(By.xpath(NinjaFormsUtils.Locator.doc_link)).click();
+			ArrayList<String> tabs2 = new ArrayList<String>(Driver.getWindowHandles());
+			Driver.switchTo().window(tabs2.get(1));
+			assertEquals(Driver.findElement(By.xpath(NinjaFormsUtils.Locator.doc_page_title)).getText(),
+					NinjaFormsUtils.Text.doc_page_title);
+			System.out.println("DOC PAGE WORKING");
+			Driver.close();
+			Driver.switchTo().window(tabs2.get(0));
 		}
-		//Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).isDisplayed())
-		{
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+
+		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
+			Driver.findElement(By.xpath(config.crisp_close)).click();
 		}
-		
+
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1440)", "");
-		
+
 		Driver.findElement(By.xpath(NinjaFormsUtils.Locator.style_1_name)).sendKeys(NinjaFormsUtils.Text.style_1_name);
-		Driver.findElement(By.xpath(NinjaFormsUtils.Locator.style_1_email)).sendKeys(NinjaFormsUtils.Text.style_1_email);
-		Driver.findElement(By.xpath(NinjaFormsUtils.Locator.style_1_message)).sendKeys(NinjaFormsUtils.Text.style_1_message);
-		if (Driver.findElement(By.xpath(config.nx_close)).isDisplayed())
-		{Driver.findElement(By.xpath(config.nx_close)).click();}
-		//Driver.findElement(By.xpath(NinjaFormsUtils.Locator.style_1_submit)).click();
+		Driver.findElement(By.xpath(NinjaFormsUtils.Locator.style_1_email))
+				.sendKeys(NinjaFormsUtils.Text.style_1_email);
+		Driver.findElement(By.xpath(NinjaFormsUtils.Locator.style_1_message))
+				.sendKeys(NinjaFormsUtils.Text.style_1_message);
 	}
-	}
+}

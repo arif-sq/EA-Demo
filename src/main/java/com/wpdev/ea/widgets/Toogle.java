@@ -19,12 +19,11 @@ public class Toogle {
 	@Test
 	public static void ContentToggle() throws InterruptedException {
 		WebDriver Driver = DriverManager.Driver;
-		Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/content-toggle/");
 		System.out.println("TESTING TOGGLE");
 
-		assertEquals(Driver.getTitle(), ToggleUtils.Text.page_title);
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(ToggleUtils.Locator.widget_title)).getText(),
 				ToggleUtils.Text.widget_title);
@@ -39,11 +38,6 @@ public class Toogle {
 			System.out.println("DOC PAGE WORKING");
 			Driver.close();
 			Driver.switchTo().window(tabs2.get(0));
-		}
-		// Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span"))
-				.isDisplayed()) {
-			Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
 
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;

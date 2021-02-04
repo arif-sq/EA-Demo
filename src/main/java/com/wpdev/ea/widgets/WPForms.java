@@ -23,7 +23,7 @@ public class WPForms {
 		Driver.manage().deleteAllCookies();
 		Driver.get(config.base_url + "/wpforms/");
 		System.out.println("TESTING WP FORM");
-		assertEquals(Driver.getTitle(), WPFormsUtils.Text.page_title);
+	
 		Driver.manage().window().maximize();
 		assertEquals(Driver.findElement(By.xpath(WPFormsUtils.Locator.widget_title)).getText(),
 				WPFormsUtils.Text.widget_title);
@@ -40,11 +40,6 @@ public class WPForms {
 			System.out.println("DOC PAGE WORKING");
 			Driver.close();
 			Driver.switchTo().window(tabs2.get(0));
-		}
-		// Driver.findElement(By.className("nx-close")).click();
-		if (Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span"))
-				.isDisplayed()) {
-			Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
 		}
 
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;

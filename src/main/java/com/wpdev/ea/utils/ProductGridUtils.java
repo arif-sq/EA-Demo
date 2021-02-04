@@ -32,7 +32,7 @@ public class ProductGridUtils {
 		public static final String style_1_data_1_image = "//*[@id=\"post-1161\"]/div/div/div/div/section[2]/div/div/div/div/div/div[3]/div/div/div/ul/li[1]/a[1]/img";
 		
 		public static final String style_1_data_2_title = "//*[@id=\"post-1161\"]/div/div/div/div/section[2]/div/div/div/div/div/div[3]/div/div/div/ul/li[4]/a[1]/h2";
-		public static final String style_1_data_2_price = "//*[@id=\"post-1161\"]/div/div/div/div/section[2]/div/div/div/div/div/div[3]/div/div/div/ul/li[4]/a[1]/span/span/bdi";
+		public static final String style_1_data_2_price = "//*[@id=\"eael-product-grid\"]/div/ul/li[4]/a[1]/span/span";
 		public static final String style_1_data_2_image = "//*[@id=\"post-1161\"]/div/div/div/div/section[2]/div/div/div/div/div/div[3]/div/div/div/ul/li[4]/a[1]/img";
 		
 		public static final String style_2_data_1_title = "//*[@id=\"post-1161\"]/div/div/div/div/section[3]/div/div/div/div/div/div/div/div/div/ul/li[1]/h2";
