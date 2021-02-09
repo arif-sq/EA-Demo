@@ -2,46 +2,24 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-04T09:47:17 BDT" name="Default suite" finished-at="2021-02-04T09:47:40 BDT" duration-ms="23043">
+  <suite started-at="2021-02-09T16:50:26 BDT" name="Default suite" finished-at="2021-02-09T16:51:57 BDT" duration-ms="91715">
     <groups>
     </groups>
-    <test started-at="2021-02-04T09:47:17 BDT" name="Default test" finished-at="2021-02-04T09:47:40 BDT" duration-ms="23043">
-      <class name="com.wpdev.ea.widgets.InteractivePromo">
-        <test-method signature="InteractivePromo()[pri:0, instance:com.wpdev.ea.widgets.InteractivePromo@229c6181]" started-at="2021-02-04T09:47:17 BDT" name="InteractivePromo" finished-at="2021-02-04T09:47:40 BDT" duration-ms="23016" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+    <test started-at="2021-02-09T16:50:26 BDT" name="Default test" finished-at="2021-02-09T16:51:57 BDT" duration-ms="91715">
+      <class name="com.wpdev.ea.widgets.CountDown">
+        <test-method signature="CountDown()[pri:0, instance:com.wpdev.ea.widgets.CountDown@229c6181]" started-at="2021-02-09T16:50:26 BDT" name="CountDown" finished-at="2021-02-09T16:51:57 BDT" duration-ms="91689" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=88.0.4324.146)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-SAK4NET', ip: '192.168.1.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\WPDEV-~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57984}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 63af0bbccf1c92641623c2b2b4129ee7]]>
+              <![CDATA[expected [2] but found [8]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=88.0.4324.146)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
-System info: host: 'DESKTOP-SAK4NET', ip: '192.168.1.243', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 87.0.4280.20 (c99e81631faa0..., userDataDir: C:\Users\WPDEV-~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57984}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 63af0bbccf1c92641623c2b2b4129ee7
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:837)
-at com.wpdev.ea.widgets.InteractivePromo.InteractivePromo(InteractivePromo.java:31)
+              <![CDATA[java.lang.AssertionError: expected [2] but found [8]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:617)
+at com.wpdev.ea.widgets.CountDown.CountDown(CountDown.java:55)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -72,11 +50,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InteractivePromo -->
-      </class> <!-- com.wpdev.ea.widgets.InteractivePromo -->
+        </test-method> <!-- CountDown -->
+      </class> <!-- com.wpdev.ea.widgets.CountDown -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

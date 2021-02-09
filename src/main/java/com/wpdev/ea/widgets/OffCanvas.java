@@ -53,11 +53,11 @@ public class OffCanvas {
 		Driver.findElement(By.xpath(OffCanvasUtils.Locator.style_1_left_btn)).click();
 		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(OffCanvasUtils.Locator.style_1_left_data)).getText(), OffCanvasUtils.Text.style_1_left_data);
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
-		Driver.findElement(By.xpath(OffCanvasUtils.Locator.style_1_right_btn)).click();
+		//Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[1]/span/span[1]/span[1]/span")).click();
+		//Driver.findElement(By.xpath(OffCanvasUtils.Locator.style_1_right_btn)).click();
 		Thread.sleep(2000);
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[2]/span/span/span[1]/span")).click();
-		Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/div/div[1]/div/span[3]/span")).click();
+		//Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/a/span[2]/span/span/span[1]/span")).click();
+		//Driver.findElement(By.xpath("//*[@id=\"crisp-chatbox\"]/div/div/div[1]/div/span[3]/span")).click();
 		
 		
 		//assertEquals(Driver.findElement(By.xpath(OffCanvasUtils.Locator.style_1_right_data)).getText(), OffCanvasUtils.Text.style_1_right_data);

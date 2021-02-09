@@ -48,9 +48,7 @@ public class FilterableGallery {
 		JavascriptExecutor style_1 = (JavascriptExecutor) Driver;
 		style_1.executeScript("window.scrollTo(0,1000)", "");
 		Thread.sleep(2000);
-		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
-			Driver.findElement(By.xpath(config.crisp_close)).click();
-		}
+
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_1_header_1)).click();
 		Thread.sleep(1000);
 		Driver.findElement(By.xpath(FilterableGalleryUtils.Locator.style_1_header_2)).click();	

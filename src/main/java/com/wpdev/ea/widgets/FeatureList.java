@@ -59,9 +59,7 @@ public class FeatureList {
 		// STYLE 2
 		JavascriptExecutor Style_2 = (JavascriptExecutor) Driver;
 		Style_2.executeScript("window.scrollTo(0,1800)");
-		if (Driver.findElement(By.xpath(config.crisp_close)).isDisplayed()) {
-			Driver.findElement(By.xpath(config.crisp_close)).click();
-		}
+
 		Thread.sleep(2000);
 		assertEquals(Driver.findElement(By.xpath(FeatureListUtils.Locator.style_2_header)).getText(),
 				FeatureListUtils.Text.style_2_header);

@@ -53,10 +53,7 @@ public class ContactForm7 {
 		Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_1_message)).sendKeys(ContactForm7Utils.Text.style_1_message);
 		JavascriptExecutor style_1_extended = (JavascriptExecutor) Driver;
 		style_1_extended.executeScript("window.scrollTo(0,1620)", "");
-		if (Driver.findElement(By.xpath(config.nx_close)).isDisplayed())
-		{Driver.findElement(By.xpath(config.nx_close)).click();}
-		//Driver.findElement(By.xpath(ContactForm7Utils.Locator.style_1_submit)).click();
-		Thread.sleep(2000);
+
 		
 		JavascriptExecutor style_2 = (JavascriptExecutor) Driver;
 		style_2.executeScript("window.scrollTo(0,2587)", "");

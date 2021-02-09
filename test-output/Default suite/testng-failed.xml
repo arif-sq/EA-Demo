@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wpdev.ea.widgets.InteractivePromo">
+      <class name="com.wpdev.ea.widgets.CountDown">
         <methods>
-          <include name="InteractivePromo"/>
+          <include name="CountDown"/>
         </methods>
-      </class> <!-- com.wpdev.ea.widgets.InteractivePromo -->
+      </class> <!-- com.wpdev.ea.widgets.CountDown -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
