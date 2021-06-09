@@ -25,5 +25,9 @@ public class PostBlockUtils {
 		
 		public static final String style_1_data_2 = "//*[@id=\"eael-post-block-4c6c0c0c\"]/div/article[2]/div/div/div[2]/header/h2/a";
 		public static final String style_1_data_2_page = "//*[@id=\"page\"]/div[1]/div/section/div/div/div[1]/div/div/section[1]/div/div/div/div/div/div[1]/div/h1";
-			}
+			
+		public static final String style_2_box_1="//*[@id=\"eael-post-block-48afb081\"]/div/article[1]/div/div/div[2]";
+		public static final String style_2_data_1="//*[@id=\"eael-post-block-48afb081\"]/div/article[1]/div/div/div[2]/header/h2/a";
+		public static final String style_2_data_1_page="//*[@id=\"page\"]/div[1]/div/section/div/div/div[1]/div/div/section[1]/div/div/div/div/div/div[1]/div/h1";
+	}
 }

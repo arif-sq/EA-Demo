@@ -117,7 +117,7 @@ public class AdvancedAccordion {
 		assertEquals(Driver.findElement(By.xpath(AdvancedAccordionUtils.Locator.style_2_data_4_desc)).getText(),
 				AdvancedAccordionUtils.Text.style_2_data_4_desc);
 
-		System.out.println("ADVANCED ACCORDION ALL OK");
+		System.out.println("ADVANCED ACCORDION OK");
 		System.out.println("-------------------------");
 
 	}

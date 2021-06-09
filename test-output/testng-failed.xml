@@ -3,11 +3,56 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.wpdev.ea.widgets.CountDown">
+      <class name="Presentation.BtrDocsCatBox">
+        <methods>
+          <include name="BtrDocsCatBox"/>
+        </methods>
+      </class> <!-- Presentation.BtrDocsCatBox -->
+      <class name="Presentation.ProtectedContent">
+        <methods>
+          <include name="ProtectedContent"/>
+        </methods>
+      </class> <!-- Presentation.ProtectedContent -->
+      <class name="Presentation.FilterableGallery">
+        <methods>
+          <include name="FilterableGallery"/>
+        </methods>
+      </class> <!-- Presentation.FilterableGallery -->
+      <class name="Presentation.ProgressBar">
+        <methods>
+          <include name="ProgressBar"/>
+        </methods>
+      </class> <!-- Presentation.ProgressBar -->
+      <class name="Presentation.FeatureList">
+        <methods>
+          <include name="FeatureList"/>
+        </methods>
+      </class> <!-- Presentation.FeatureList -->
+      <class name="Presentation.AdvancedDataTable">
+        <methods>
+          <include name="AdvancedDataTable"/>
+        </methods>
+      </class> <!-- Presentation.AdvancedDataTable -->
+      <class name="Presentation.OnePageNav">
+        <methods>
+          <include name="OnePageNav"/>
+        </methods>
+      </class> <!-- Presentation.OnePageNav -->
+      <class name="Presentation.TeamMember">
+        <methods>
+          <include name="TeamMember"/>
+        </methods>
+      </class> <!-- Presentation.TeamMember -->
+      <class name="Presentation.CountDown">
         <methods>
           <include name="CountDown"/>
         </methods>
-      </class> <!-- com.wpdev.ea.widgets.CountDown -->
+      </class> <!-- Presentation.CountDown -->
+      <class name="Presentation.CallToAction">
+        <methods>
+          <include name="CallToAction"/>
+        </methods>
+      </class> <!-- Presentation.CallToAction -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

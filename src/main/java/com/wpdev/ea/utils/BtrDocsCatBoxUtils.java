@@ -22,8 +22,15 @@ public class BtrDocsCatBoxUtils {
 		public static final String style_1_data_2 = "//*[@id=\"eael-bd-cat-box-5655788f\"]/div/a[2]/div/h2";
 		public static final String style_1_data_2_page = "//*[@id=\"main\"]/div/div[1]/h3";
 		
-		public static final String style_2_data_1 = "//*[@id=\"eael-bd-cat-box-783034e0\"]/div/a[3]/div/h2/span";
+		
+		
+		
+		
+		public static final String style_2_data_1 = "//*[@id=\"eael-bd-cat-box-783034e0\"]/div/a[1]/div/h2/span";
 		public static final String style_2_data_1_page = "//*[@id=\"main\"]/div/div[1]/h3";
+		
+		public static final String style_2_data_2 = "//*[@id=\"eael-bd-cat-box-783034e0\"]/div/a[2]/div/h2/span";
+		public static final String style_2_data_2_page = "//*[@id=\"main\"]/div/div[1]/h3";
 	}
 
 }

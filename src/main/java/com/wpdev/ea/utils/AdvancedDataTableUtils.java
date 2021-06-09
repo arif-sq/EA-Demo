@@ -16,6 +16,10 @@ public class AdvancedDataTableUtils {
 		public static final String style_2_header = "Data Table Style 02"; 
 		public static final String style_2_desc = "Sort your Data in Real-time along side Pagination & Live Search"; 
 		public static final String style_2_data = "Attend"; 
+		public static final String style_2_sorted_data = "7"; 
+		public static final String style_4_data= "10";
+		
+		public static final String style_2_2nd_page_data = "10"; 
 	}
 	public static class Locator {
 		public static final String widget_title = "//*[@id=\"post-256377\"]/div/div/div/div/section[1]/div[4]/div/div[2]/div/div/section/div/div/div[2]/div/div/div[1]/div/h2";
@@ -35,7 +39,11 @@ public class AdvancedDataTableUtils {
 		public static final String style_2_header = "//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/section/div/div/div/div/div/div[1]/div/h3"; 
 		public static final String style_2_desc = "//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/section/div/div/div/div/div/div[2]/div/h6"; 
 		public static final String style_2_data = "//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/div/div/div/div[1]/table/tbody/tr[1]/td[3]"; 
-		public static final String style_2_sorting = "//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/div/div/div/div[1]/table/thead/tr/th[3]"; 
-	
+		public static final String style_2_sorting = "//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/div/div/div/div[1]/table/thead/tr/th[1]"; 
+		public static final String style_2_sorted_data = "//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/div/div/div/div[1]/table/tbody/tr[1]/td[1]"; 
+		public static final String style_3_data="//*[@id=\"post-256377\"]/div/div/div/div/section[5]/div/div/div/div/div/div/div/div/div/table/thead/tr/th[2]";
+		public static final String style_2_pagination="//*[@id=\"post-256377\"]/div/div/div/div/section[4]/div/div/div/div/div/div/div/div/div[2]/a[3]";
+		public static final String style_2_2nd_page_data= "//*[@id=\"post-256377\"]/div/div/div/div/section[6]/div/div/div/div/div/div/div/div/div[1]/table/tbody/tr[10]/td[1]";
+
 	}
 }
